@@ -12,20 +12,20 @@
 export LOC=$(pwd)
 
 cd ..
-wget https://www.libssh2.org/download/libssh2-1.8.0.tar.gz
-tar -zxvf libssh2-1.8.0.tar.gz
+wget https://www.libssh2.org/download/libssh2-1.8.0.tar.gz >/dev/null 2>&1
+tar -zxvf libssh2-1.8.0.tar.gz >/dev/null 2>&1
 cd libssh2-1.8.0/
-./configure
-make
-sudo make install
+./configure >/dev/null 2>&1
+make >/dev/null 2>&1
+sudo make install >/dev/null 2>&1
 
 cd ..
-wget https://curl.haxx.se/download/curl-7.54.0.tar.gz
-tar -zxvf curl-7.54.0.tar.gz
+wget https://curl.haxx.se/download/curl-7.54.0.tar.gz >/dev/null 2>&1
+tar -zxvf curl-7.54.0.tar.gz >/dev/null 2>&1
 cd curl-7.54.0
-./configure --with-libssh2=/usr/local
-make
-sudo make install
+./configure --with-libssh2=/usr/local >/dev/null 2>&1
+make >/dev/null 2>&1
+sudo make install >/dev/null 2>&1
 
 cd /usr/lib/x86_64-linux-gnu/
 sudo mv /usr/lib/x86_64-linux-gnu/libcurl.so.4 libcurl.so.4.bak
